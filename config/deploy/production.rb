@@ -1,4 +1,4 @@
-server 'ec2-34-210-33-155.us-west-2.compute.amazonaws.com', user: 'ubuntu', roles: %w(web app db)
+server 'ec2-54-71-122-105.us-west-2.compute.amazonaws.com', user: 'ubuntu', roles: %w(web app db)
 set :stage, :production
 set :branch, "master"
 
