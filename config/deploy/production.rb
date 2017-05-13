@@ -1,3 +1,11 @@
+server 'ec2-34-210-33-155.us-west-2.compute.amazonaws.com', user: 'ubuntu', roles: %w(web app db)
+set :stage, :production
+set :branch, "master"
+
+set :rails_env, :production
+
+set :deploy_to, '/home/ubuntu/MDTTool'
+
 # server-based syntax
 # ======================
 # Defines a single server with a list of roles and multiple properties.
