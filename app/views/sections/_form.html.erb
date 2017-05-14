@@ -1,0 +1,10 @@
+<%= simple_form_for(@section) do |f| %>
+  <%= f.error_notification %>
+  <%= f.input :order %>
+  <%= f.input :name %>
+  <%= f.input :media_url %>
+  <%= f.input :config %>
+  <%= f.association :sample %>
+  <%= f.association :component %>
+  <%= f.button :submit %>
+<% end %>

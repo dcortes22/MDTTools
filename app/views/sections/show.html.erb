@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Order:</strong>
+  <%= @section.order %>
+</p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @section.name %>
+</p>
+
+<p>
+  <strong>Media url:</strong>
+  <%= @section.media_url %>
+</p>
+
+<p>
+  <strong>Config:</strong>
+  <%= @section.config %>
+</p>
+
+<p>
+  <strong>Sample:</strong>
+  <%= @section.sample %>
+</p>
+
+<%= link_to 'Edit', edit_section_path(@section) %> |
+<%= link_to 'Back', sections_path %>

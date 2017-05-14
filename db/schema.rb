@@ -10,7 +10,13 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170514062824) do
+ActiveRecord::Schema.define(version: 20170514183903) do
+
+  create_table "components", force: :cascade do |t|
+    t.string   "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "roles", force: :cascade do |t|
     t.string   "name"
@@ -18,12 +24,31 @@ ActiveRecord::Schema.define(version: 20170514062824) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "samples", force: :cascade do |t|
+    t.string   "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "sections", force: :cascade do |t|
+    t.integer  "order"
+    t.string   "name"
+    t.string   "media_url"
+    t.string   "config"
+    t.integer  "sample_id"
+    t.datetime "created_at",   null: false
+    t.datetime "updated_at",   null: false
+    t.integer  "component_id"
+    t.index ["component_id"], name: "index_sections_on_component_id"
+    t.index ["sample_id"], name: "index_sections_on_sample_id"
+  end
+
   create_table "users", force: :cascade do |t|
     t.string   "name"
     t.string   "last_name"
+    t.string   "email",                  default: "", null: false
     t.datetime "created_at",                          null: false
     t.datetime "updated_at",                          null: false
-    t.string   "email",                  default: "", null: false
     t.string   "encrypted_password",     default: "", null: false
     t.string   "reset_password_token"
     t.datetime "reset_password_sent_at"

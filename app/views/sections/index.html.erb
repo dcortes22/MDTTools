@@ -1,0 +1,28 @@
+<div class="row">
+  <div class="col-lg-12">
+    <h1 class="page-header">Configuration Blocks</h1>
+    <table class="table table-striped">
+      <thead>
+        <tr>
+          <th>Order</th>
+          <th>Name</th>
+          <th>Sample</th>
+          <th colspan="3"></th>
+        </tr>
+      </thead>
+      <tbody>
+        <% @sections.each do |section| %>
+          <tr>
+            <td><%= section.order %></td>
+            <td><%= section.name %></td>
+            <td><%= section.sample.name %></td>
+            <td><%= link_to 'Show', section %></td>
+            <td><%= link_to 'Edit', edit_section_path(section) %></td>
+            <td><%= link_to 'Destroy', section, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+    <%= link_to 'New Configuration Block', new_section_path %>
+  </div>
+</div>

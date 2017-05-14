@@ -1,4 +1,7 @@
 Rails.application.routes.draw do
+  resources :components
+  resources :sections
+  resources :samples
   resources :roles
   devise_for :users
   resources :users

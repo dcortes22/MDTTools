@@ -67,15 +67,27 @@
                             <% end %>
                           </li>
                         <% end %>
-                        <li>
-                            <a href="forms.html"><i class="fa fa-user-plus fa-fw"></i> Samples</a>
-                        </li>
-                        <li>
-                            <a href="#"><i class="fa fa-file-code-o fa-fw"></i> Configuration Files</a>
-                        </li>
-                        <li>
-                            <a href="#"><i class="fa fa-film fa-fw"></i> Modules</a>
-                        </li>
+                        <% if can? :create, Sample %>
+                          <li>
+                            <%= link_to samples_path do %>
+                              <i class="fa fa-user-plus fa-fw"></i> Samples
+                            <% end %>
+                          </li>
+                        <% end %>
+                        <% if can? :create, Section %>
+                          <li>
+                            <%= link_to sections_path do %>
+                              <i class="fa fa-file-code-o fa-fw"></i> Configuration Blocks
+                            <% end %>
+                          </li>
+                        <% end %>
+                        <% if can? :create, Section %>
+                          <li>
+                            <%= link_to components_path do %>
+                              <i class="fa fa-film fa-fw"></i> Components
+                            <% end %>
+                          </li>
+                        <% end %>
                     </ul>
                 </div>
                 <!-- /.sidebar-collapse -->
