@@ -61,6 +61,11 @@ class SamplesController < ApplicationController
     end
   end
 
+  def configuration
+    @sample = Sample.find_by(token: params[:token])
+    @components = @sample.sections.order(order: :asc).group_by{ |c| c.component.name}
+  end
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_sample
