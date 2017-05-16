@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :types
   resources :components
   resources :sections
   resources :samples
