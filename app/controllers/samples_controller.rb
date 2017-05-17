@@ -63,7 +63,7 @@ class SamplesController < ApplicationController
 
   def configuration
     @sample = Sample.find_by(token: params[:token])
-    @components = @sample.sections.order(order: :asc).group_by{ |c| c.component.name}
+    @components = @sample.sections.order(order: :asc).group_by{ |c| c.component.name} unless @sample.nil?
   end
 
   private
