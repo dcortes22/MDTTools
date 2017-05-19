@@ -11,5 +11,5 @@ unless @components.nil?
     end
   end
 else
-  json.array!
+  json.app_name 
 end
