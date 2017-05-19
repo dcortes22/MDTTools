@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170518200340) do
+ActiveRecord::Schema.define(version: 20170519155345) do
 
   create_table "components", force: :cascade do |t|
     t.string   "name"
@@ -35,8 +35,8 @@ ActiveRecord::Schema.define(version: 20170518200340) do
   create_table "sections", force: :cascade do |t|
     t.integer  "order"
     t.string   "name"
-    t.string   "media_url"
-    t.string   "config"
+    t.text     "media_url"
+    t.text     "config"
     t.integer  "sample_id"
     t.datetime "created_at",   null: false
     t.datetime "updated_at",   null: false
