@@ -1,5 +1,6 @@
 unless @components.nil?
   json.app_name @sample.name
+  json.color @sample.color
   json.sections @components.keys do |component|
     json.name component
     json.order Component.find_by(name: component).order
@@ -11,5 +12,5 @@ unless @components.nil?
     end
   end
 else
-  json.app_name 
+  json.app_name
 end

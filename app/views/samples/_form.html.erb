@@ -1,5 +1,6 @@
 <%= simple_form_for(@sample) do |f| %>
   <%= f.error_notification %>
   <%= f.input :name %>
+  <%= f.input :color, as: :colorpicker %>
   <%= f.button :submit %>
 <% end %>
