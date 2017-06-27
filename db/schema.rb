@@ -10,13 +10,33 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170524193921) do
+ActiveRecord::Schema.define(version: 20170627195533) do
 
   create_table "components", force: :cascade do |t|
     t.string   "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.integer  "order"
+  end
+
+  create_table "configurations", force: :cascade do |t|
+    t.string   "key"
+    t.string   "value"
+    t.integer  "section_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["section_id"], name: "index_configurations_on_section_id"
+  end
+
+  create_table "plataforms", force: :cascade do |t|
+    t.string   "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "plataforms_sections", id: false, force: :cascade do |t|
+    t.integer "section_id",   null: false
+    t.integer "plataform_id", null: false
   end
 
   create_table "roles", force: :cascade do |t|

@@ -43,6 +43,7 @@ gem 'devise'
 gem 'simple_form'
 gem 'cancancan', '~> 1.10'
 gem 'rack-cors', :require => 'rack/cors'
+gem 'bootstrap-select-rails'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console

@@ -15,4 +15,5 @@
 //= require twitter/bootstrap
 //= require bootstrap-colorpicker
 //= require turbolinks
+//= require bootstrap-select
 //= require_tree .
