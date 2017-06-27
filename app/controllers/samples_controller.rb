@@ -24,10 +24,19 @@ class SamplesController < ApplicationController
   # POST /samples
   # POST /samples.json
   def create
+    copy = params[:copy_from][:id]
     @sample = Sample.new(sample_params)
 
     respond_to do |format|
       if @sample.save
+        unless copy == 0
+          sections = Section.joins(:sample).where(samples: {id: copy})
+            sections.each do |section|
+              new_section = Section.new(section.attributes.merge({id: nil, created_at: nil, updated_at: nil, sample_id: nil}))
+              new_section.sample_id = @sample.id
+              new_section.save
+            end
+        end
         format.html { redirect_to @sample, notice: 'Sample was successfully created.' }
         format.json { render :show, status: :created, location: @sample }
       else
