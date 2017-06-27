@@ -25,6 +25,15 @@
         </thead>
         <tbody>
           <% @components.each do |component| %>
+            <tr class="info">
+              <td></td>
+              <td><%= component[0] %></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+            </tr>
             <% component[1].each  do |section| %>
             <tr>
               <td><%= section.order %></td>
