@@ -4,7 +4,9 @@ class SectionsController < ApplicationController
   # GET /sections
   # GET /sections.json
   def index
-    @sections = Section.all
+    if params[:sample] && params[:sample][:id]
+      @sections = Section.joins(:sample).where(samples: {id: params[:sample][:id]}).order(order: :asc)
+    end
   end
 
   # GET /sections/1
