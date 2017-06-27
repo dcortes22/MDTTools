@@ -6,7 +6,7 @@ unless @components.nil?
     json.order Component.find_by(name: component).order
     json.components @components[component] do |block|
       json.name block.name
-      json.plataforms do
+      json.platforms do
         json.array! block.plataforms.collect { |p| p.name}
       end
       json.media block.media_url
