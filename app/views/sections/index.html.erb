@@ -12,26 +12,30 @@
       </form>
     </div>
 
-    <% unless @sections.nil? %>
+    <% unless @components.nil? %>
       <table class="table table-striped">
         <thead>
           <tr>
             <th>Order</th>
             <th>Name</th>
+            <th>Component</th>
             <th>Sample</th>
             <th colspan="3"></th>
           </tr>
         </thead>
         <tbody>
-          <% @sections.each do |section| %>
+          <% @components.each do |component| %>
+            <% component[1].each  do |section| %>
             <tr>
               <td><%= section.order %></td>
               <td><%= section.name %></td>
+              <td><%= component[0] %></td>
               <td><%= section.sample.name %></td>
               <td><%= link_to 'Show', section %></td>
               <td><%= link_to 'Edit', edit_section_path(section) %></td>
               <td><%= link_to 'Destroy', section, method: :delete, data: { confirm: 'Are you sure?' } %></td>
             </tr>
+            <% end %>
           <% end %>
         </tbody>
       </table>

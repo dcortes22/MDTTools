@@ -5,7 +5,8 @@ class SectionsController < ApplicationController
   # GET /sections.json
   def index
     if params[:sample] && params[:sample][:id]
-      @sections = Section.joins(:sample).where(samples: {id: params[:sample][:id]}).order(order: :asc)
+      @sample = Sample.find_by(id: params[:sample][:id])
+      @components = @sample.sections.order(order: :asc).group_by{ |c| c.component.name} unless @sample.nil?
     end
   end
 
