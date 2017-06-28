@@ -34,6 +34,8 @@ class SamplesController < ApplicationController
             sections.each do |section|
               new_section = Section.new(section.attributes.merge({id: nil, created_at: nil, updated_at: nil, sample_id: nil}))
               new_section.sample_id = @sample.id
+              new_section.plataforms.build()
+              new_section.plataforms = section.plataforms
               new_section.save
             end
         end
