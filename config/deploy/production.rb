@@ -1,10 +1,10 @@
-server 'ec2-54-71-122-105.us-west-2.compute.amazonaws.com', user: 'ubuntu', roles: %w(web app db)
+server '159.203.126.236', user: 'david', roles: %w(web app db)
 set :stage, :production
 set :branch, "master"
 
 set :rails_env, :production
 
-set :deploy_to, '/home/ubuntu/MDTTool'
+set :deploy_to, '/home/david/MDTTool'
 
 # server-based syntax
 # ======================
